@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d18">
+<title>ZEE Game Shop | Gaming Account Marketplace</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap');
+:root{--bg:#080c16;--panel:#111827;--panel2:#151f32;--line:#25334b;--muted:#9aa9bf;--text:#f4f7ff;--blue:#38bdf8;--violet:#8b5cf6;--green:#34d399}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#172b50 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,"Noto Sans Myanmar",sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;background:#080c16eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px;font-size:21px}.brandmark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--violet));display:grid;place-items:center;color:#07101f;font-weight:1000;font-size:22px;box-shadow:0 8px 30px #38bdf833}
+.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:2px}
+.navlinks{display:flex;gap:22px;color:#c2cde0;font-size:13px}.navlinks a{color:inherit;text-decoration:none}.navlinks a:hover{color:var(--blue)}
+.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:800;color:#07101c;background:linear-gradient(110deg,var(--blue),#818cf8);box-shadow:0 8px 24px #38bdf826}
+.btn.ghost{background:#18243a;color:#e7efff;border:1px solid var(--line);box-shadow:none}
+.hero{padding:66px 0 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid #38bdf84d;background:#38bdf812;color:#8bdcff;border-radius:99px;padding:7px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(36px,5vw,62px);line-height:1.08;margin:20px 0 14px;letter-spacing:-2px}h1 span{background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);line-height:1.8;max-width:580px;font-size:15px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-art{min-height:280px;border:1px solid #344766;border-radius:25px;background:linear-gradient(145deg,#1b2d4c,#111827 60%,#21194a);position:relative;overflow:hidden;padding:25px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-art:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#38bdf833;filter:blur(3px);right:-35px;top:-75px}
+.hero-art:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#8b5cf633;filter:blur(2px);left:-55px;top:55px}
+.art-icon{position:absolute;right:34px;top:28px;font-size:105px;filter:drop-shadow(0 15px 25px #0008);z-index:1}
+.art-label{position:relative;z-index:2;font-size:11px;color:#9fb4d5;letter-spacing:2px;font-weight:800}.art-title{position:relative;z-index:2;font-size:25px;font-weight:900;margin-top:7px}
+.stats{display:flex;gap:25px;margin-top:28px}.stat strong{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+section{padding:28px 0 48px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.eyebrow{color:var(--blue);font-size:11px;letter-spacing:2px;font-weight:900}.section-head h2{font-size:25px;margin:7px 0 0}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.filter{border:1px solid var(--line);background:#101827;color:#c7d3e6;border-radius:10px;padding:9px 14px;font-size:12px}.filter.active{background:#16304a;border-color:#38bdf8;color:#9be3ff}
+.searchrow{display:flex;gap:10px;margin-bottom:18px}.searchrow input{flex:1;min-width:0}
+input,select,textarea{background:#0c1422;border:1px solid #2a3a54;color:#edf4ff;border-radius:10px;padding:12px 13px;outline:none;width:100%}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #38bdf81c}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);background:linear-gradient(160deg,#141f31,#0f1725);border-radius:17px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#4b719b;box-shadow:0 15px 35px #0004}
+.thumb{height:145px;display:grid;place-items:center;font-size:57px;position:relative;background:radial-gradient(circle at 50% 35%,#294a70,#111b2d 65%)}.thumb.ml{background:radial-gradient(circle at 50% 35%,#4b3479,#15172d 65%)}
+.tag{position:absolute;top:12px;left:12px;background:#0a1424d9;border:1px solid #ffffff24;border-radius:7px;padding:5px 8px;font-size:10px;font-weight:800;color:#a8e7ff}.verified{position:absolute;right:12px;top:12px;color:#6ee7b7;font-size:10px;background:#073c32;padding:5px 8px;border-radius:7px}
+.cardbody{padding:15px}.card h3{font-size:15px;margin:0 0 10px}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}.meta span{font-size:10px;color:#b6c4d9;background:#202d42;padding:5px 8px;border-radius:6px}.price-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff12;padding-top:12px}.price{font-size:19px;font-weight:900;color:#7dd3fc}.price small{font-size:10px;color:var(--muted);font-weight:500}.buy{padding:9px 12px;font-size:11px;border-radius:9px}
+.empty{padding:35px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px;grid-column:1/-1}
+.panel{background:linear-gradient(150deg,#141f31,#0d1523);border:1px solid var(--line);border-radius:18px;padding:22px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;color:#c7d3e6;font-size:12px;margin:0 0 7px}.field.full{grid-column:1/-1}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px}
+footer{border-top:1px solid #ffffff12;padding:25px 0 35px;color:#8292aa;font-size:11px;line-height:1.8}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{display:none;position:fixed;inset:0;background:#02050bd9;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{max-width:440px;width:100%;background:#111b2c;border:1px solid #344766;border-radius:18px;padding:23px;box-shadow:0 25px 90px #0009}.modalbox h3{margin:0 0 10px}.modalbox p{color:var(--muted);font-size:13px;line-height:1.7}.modal-actions{display:flex;gap:9px;margin-top:17px}
+.notice{border:1px solid #8b6a2b;background:#3a2b12;color:#f5d79a;padding:12px 14px;border-radius:11px;font-size:11px;line-height:1.7;margin-top:14px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:43px}.hero-art{min-height:220px}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:560px){.wrap{padding:0 15px}.nav{height:66px}.brand{font-size:18px}.nav>.btn{padding:10px 12px;font-size:11px}.hero{padding-top:35px}.stats{gap:16px}.grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.searchrow{flex-direction:column}.thumb{height:160px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><div class="brandmark">Z</div><div>ZEE GAME SHOP<small>GAMING ACCOUNT MARKETPLACE</small></div></div>
+  <nav class="navlinks"><a href="#market">Marketplace</a><a href="#sell">Sell Account</a><a href="#safety">Safety</a></nav>
+  <a href="#sell"><button class="btn">+ တင်ရောင်းမယ်</button></a>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="kicker">⚡ BUY • SELL • LEVEL UP</div>
+      <h1>Find Your Next<br><span>Gaming Account.</span></h1>
+      <p>ZEE Game Shop မှာ PUBG Mobile နဲ့ Mobile Legends Account တွေကို ရှာဖွေကြည့်ရှုနိုင်ပြီး ရောင်းချရန်လည်း စာရင်းတင်နိုင်ပါတယ်။</p>
+      <div class="hero-actions"><a href="#market"><button class="btn">Account ရှာမယ်</button></a><a href="#sell"><button class="btn ghost">Account တင်ရောင်းမယ်</button></a></div>
+      <div class="stats"><div class="stat"><strong>2 Games</strong><span>Game categories</span></div><div class="stat"><strong>24/7</strong><span>Browse anytime</span></div><div class="stat"><strong>Easy</strong><span>List your account</span></div></div>
+    </div>
+    <div class="hero-art"><div class="art-icon">🎮</div><div class="art-label">WELCOME TO</div><div class="art-title">ZEE GAME SHOP</div></div>
+  </div>
+
+  <section id="market">
+    <div class="section-head"><div><div class="eyebrow">EXPLORE LISTINGS</div><h2>Account Marketplace</h2></div><span style="color:var(--muted);font-size:12px" id="count">3 Listings</span></div>
+    <div class="filters">
+      <button class="filter active" data-game="All">All Games</button><button class="filter" data-game="PUBG Mobile">PUBG Mobile</button><button class="filter" data-game="MLBB">Mobile Legends</button>
+    </div>
+    <div class="searchrow"><input id="search" placeholder="Account name, rank, skin စသည်ဖြင့် ရှာရန်…"><select id="sort" style="max-width:180px"><option value="new">အသစ်တင်ထားသော</option><option value="low">ဈေးနှုန်း အနည်းဆုံး</option><option value="high">ဈေးနှုန်း အများဆုံး</option></select></div>
+    <div class="grid" id="listings"></div>
+  </section>
+
+  <section id="sell">
+    <div class="section-head"><div><div class="eyebrow">SELL ON ZEE</div><h2>သင့် Account ကို တင်ရောင်းပါ</h2></div></div>
+    <div class="panel">
+      <form id="sellForm" class="formgrid">
+        <div class="field"><label>Game အမျိုးအစား *</label><select id="game" required><option value="PUBG Mobile">PUBG Mobile</option><option value="MLBB">Mobile Legends</option></select></div>
+        <div class="field"><label>Account ခေါင်းစဉ် *</label><input id="title" required placeholder="ဥပမာ - Mythic account / Glacier skin"></div>
+        <div class="field"><label>Rank / Level</label><input id="rank" placeholder="ဥပမာ - Ace Master / Mythic"></div>
+        <div class="field"><label>ဈေးနှုန်း (Ks) *</label><input id="price" type="number" min="1" required placeholder="ဥပမာ - 250000"></div>
+        <div class="field"><label>Skin / Item အသေးစိတ်</label><input id="details" placeholder="ဥပမာ - Glacier, X-Suit, Legend skins"></div>
+        <div class="field"><label>ဆက်သွယ်ရန် (Telegram / ဖုန်း)</label><input id="contact" placeholder="သင့်ဆက်သွယ်ရန်"></div>
+        <div class="field full"><label>Account ပုံ URL (မဖြစ်မနေ မဟုတ်ပါ)</label><input id="photo" type="url" placeholder="https://example.com/image.jpg"></div>
+        <div class="field full"><button class="btn" type="submit">Account တင်မယ်</button><div class="hint">Demo အနေနဲ့ ဒီ Browser ထဲမှာသာ စာရင်းသိမ်းထားပါတယ်။ Public Website ပေါ် တကယ်တင်ရန် Admin approval နဲ့ database ချိတ်ဆက်ဖို့ လိုအပ်ပါတယ်။</div></div>
+      </form>
+      <div class="notice">လုံခြုံရေးသတိပြုရန် — Password၊ OTP၊ Recovery Code နဲ့ ကိုယ်ရေးကိုယ်တာအချက်အလက်တွေကို Public Listing မှာ မထည့်ပါနှင့်။ Account ပိုင်ဆိုင်မှုနဲ့ Game ရဲ့ transfer စည်းမျဉ်းတွေကို အရင်စစ်ဆေးပါ။</div>
+    </div>
+  </section>
+  <section id="safety">
+    <div class="panel"><div class="eyebrow">TRADE SAFELY</div><h2 style="margin:8px 0">ဝယ်ယူရောင်းချရာတွင် သတိပြုရန်</h2><p style="color:var(--muted);font-size:13px;line-height:1.9;margin:0">Account ပိုင်ဆိုင်မှုကို စစ်ဆေးပါ။ ငွေပေးချေမှုနှင့် Account လွှဲပြောင်းမှုကို နှစ်ဖက်သဘောတူညီချက်ဖြင့်သာ ဆောင်ရွက်ပါ။ ZEE Game Shop ၏ တရားဝင် Escrow သို့မဟုတ် Payment အာမခံစနစ် မချိတ်ဆက်ရသေးပါ။</p></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong style="color:#eaf3ff">ZEE GAME SHOP</strong><br>Gaming Account Marketplace</div><div>© 2026 ZEE Game Shop. All rights reserved.<br>Marketplace demo — backend & payment integration not yet connected.</div></div></footer>
+<div class="modal" id="modal"><div class="modalbox"><h3 id="modalTitle">Listing details</h3><p id="modalText"></p><div class="modal-actions"><button class="btn" id="contactBtn">Seller ကို ဆက်သွယ်မယ်</button><button class="btn ghost" id="closeModal">ပိတ်မယ်</button></div></div></div>
+<script>
+const starter=[
+ {game:"PUBG Mobile",title:"Glacier + X-Suit Collection",rank:"Conqueror",price:350000,details:"Glacier • X-Suit • Premium outfits",contact:"Seller contact မထည့်ရသေးပါ",icon:"🎯",date:3},
+ {game:"MLBB",title:"Mythic Account • Legend Skins",rank:"Mythic",price:180000,details:"Legend skins • Collector skins",contact:"Seller contact မထည့်ရသေးပါ",icon:"⚔️",date:2},
+ {game:"PUBG Mobile",title:"High Tier Account",rank:"Ace Master",price:95000,details:"Rare outfits • Weapon skins",contact:"Seller contact မထည့်ရသေးပါ",icon:"🪖",date:1}
+];
+let items=[...starter];let active="All";let selected=null;
+const el=id=>document.getElementById(id);
+function money(n){return Number(n).toLocaleString("en-US")+" Ks"}
+function render(){
+ let q=el("search").value.toLowerCase(),sort=el("sort").value;
+ let data=items.filter(x=>(active==="All"||x.game===active)&&[x.title,x.rank,x.details,x.game].join(" ").toLowerCase().includes(q));
+ if(sort==="low")data.sort((a,b)=>a.price-b.price);else if(sort==="high")data.sort((a,b)=>b.price-a.price);else data.sort((a,b)=>b.date-a.date);
+ el("count").textContent=data.length+" Listings";
+ el("listings").innerHTML=data.length?data.map((x,i)=>`<article class="card"><div class="thumb ${x.game==="MLBB"?"ml":""}" ${x.photo?`style="background-image:url('${x.photo}');background-size:cover;background-position:center"`:""}><span class="tag">${x.game}</span><span class="verified">● LISTED</span>${x.photo?"":x.icon||"🎮"}</div><div class="cardbody"><h3>${esc(x.title)}</h3><div class="meta"><span>${esc(x.rank||"Rank မဖော်ပြထား")}</span><span>${esc(x.details||"အသေးစိတ် မဖော်ပြထား")}</span></div><div class="price-row"><div class="price">${money(x.price)}<br><small>Asking price</small></div><button class="btn buy" data-index="${items.indexOf(x)}">အသေးစိတ်</button></div></div></article>`).join(""):'<div class="empty">ရှာဖွေမှုနဲ့ ကိုက်ညီတဲ့ Account မတွေ့ပါ။</div>';
+ document.querySelectorAll("[data-index]").forEach(b=>b.onclick=()=>openItem(items[+b.dataset.index]));
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function openItem(x){selected=x;el("modalTitle").textContent=x.title;el("modalText").textContent=`${x.game} • ${x.rank||"Rank မဖော်ပြထား"} • ${money(x.price)}. ${x.details||""} ဆက်သွယ်ရန်: ${x.contact||"Seller contact မထည့်ရသေးပါ"}.`;el("modal").classList.add("show");el("contactBtn").disabled=!x.contact||x.contact.includes("မထည့်");}
+el("contactBtn").onclick=()=>{if(selected&&selected.contact&&!selected.contact.includes("မထည့်")){if(/^https?:\/\//.test(selected.contact))window.open(selected.contact,"_blank");else alert("Seller contact: "+selected.contact)}};
+el("closeModal").onclick=()=>el("modal").classList.remove("show");
+el("modal").onclick=e=>{if(e.target===el("modal"))el("modal").classList.remove("show")};
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");active=b.dataset.game;render()});
+el("search").oninput=render;el("sort").onchange=render;
+el("sellForm").onsubmit=e=>{e.preventDefault();items.unshift({game:el("game").value,title:el("title").value,rank:el("rank").value,price:+el("price").value,details:el("details").value,contact:el("contact").value||"Seller contact မထည့်ရသေးပါ",photo:el("photo").value,icon:el("game").value==="MLBB"?"⚔️":"🎮",date:Date.now()});active="All";document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.game==="All"));render();e.target.reset();document.querySelector("#market").scrollIntoView({behavior:"smooth"});alert("Demo listing ကို ဒီ Browser ထဲမှာ ပြသလိုက်ပါပြီ။ Public website ပေါ် မတင်ရသေးပါ။")};
+render();
+</script>
+</body>
+</html>
